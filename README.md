@@ -19,4 +19,25 @@ tinker test
 
 3、build.gradle中修改loader="项目的BaseBuildInfo"
 
-// 目前就知道这些
+> 打补丁包的流程
+
+1、正常流程安装APP
+
+2、出现bug，并修改代码
+
+3、选择一个apk为参考点，打差异包
+
+4、运行tinkerPatch来打Patch包
+
+> 注意
+
+  选择上次打的apk为参考apk，修改build.gradle中的
+  
+  tinkerOldApkPath、tinkerApplyMappingPath、tinkerApplyResourcePath
+  
+  对应的版本名称
+  
+  参考包的位置为app\build\bakApk文件夹下，包含apk和R.txt
+  
+  生成的Patch包的位置为app\build\outputs\tinkerPatch文件夹下对应的patch_signed_7zip.apk
+  
